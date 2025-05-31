@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="dev.paulina.multithreadimageprocessing.HelloController">
+
+  <top>
+    <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10;">
+      <ImageView fx:id="logoImageView" fitHeight="50" preserveRatio="true"/>
+      <Label text="Aplikacja do przetwarzania obrazów" style="-fx-font-size: 20; -fx-font-weight: bold;"/>
+    </HBox>
+  </top>
+
+  <center>
+    <VBox spacing="10" alignment="TOP_CENTER" style="-fx-padding: 10;">
+      <Label text="Witaj w aplikacji do przetwarzania obrazów!" style="-fx-font-size: 14;"/>
+      <ComboBox fx:id="operationComboBox" promptText="Wybierz operację" prefWidth="200"/>
+      <HBox spacing="10" alignment="CENTER">
+        <Button fx:id="btnExecute" text="Wykonaj" onAction="#onExecute"/>
+        <Button fx:id="btnLoadImage" text="Wczytaj obraz" onAction="#onLoadImage"/>
+        <Button fx:id="btnSaveImage" text="Zapisz obraz" onAction="#onSaveImage"/>
+        <Button fx:id="btnRotateLeft" text="↪" onAction="#onRotateLeft"/>
+        <Button fx:id="btnRotateRight" text="↩" onAction="#onRotateRight"/>
+        <Button fx:id="btnScale" text="Skaluj" onAction="#onScale"/>
+      </HBox>
+      <HBox spacing="20" alignment="CENTER">
+        <ImageView fx:id="originalImageView" fitWidth="300" preserveRatio="true"/>
+        <ImageView fx:id="processedImageView" fitWidth="300" preserveRatio="true"/>
+      </HBox>
+    </VBox>
+  </center>
+
+  <bottom>
+    <HBox alignment="CENTER" style="-fx-padding: 10;">
+      <Label text="Autor: Paulina Szulc, Politechnika Wrocławska" style="-fx-font-size: 12;"/>
+    </HBox>
+  </bottom>
+
+</BorderPane>
